@@ -634,6 +634,11 @@ public class Jck implements StfPluginInterface {
 							throw new StfException("Error: DISPLAY must be set to run tests " + tests + " on " + platform);
 						}
 						else {
+							if (!platform.equals("aix")){
+								fileContent += "set jck.env.testPlatform.display " + ";\n;
+								String display = "jsvt068.hursley.ibm.com:3"
+							}
+						else{
 							fileContent += "set jck.env.testPlatform.display " + display + ";\n";
 						}
 					}
